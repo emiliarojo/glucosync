@@ -29,3 +29,13 @@ form {
   flex-direction: column;
   width: 100%;
 }
+
+.numerical-inputs {
+  margin: 2rem 0;
+  input {
+    text-align: center;
+    &::placeholder {
+      text-align: center;
+    }
+  }
+}

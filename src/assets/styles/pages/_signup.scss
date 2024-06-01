@@ -1,0 +1,54 @@
+.signup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.signup-container {
+  height: 90%;
+  width: 80%;
+}
+
+.signup-title {
+  font-family: $header;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.signup-subtitle {
+  font-family: $body;
+  font-size: 1rem;
+  font-weight: 300;
+  &-sm {
+    font-size: 0.9rem;
+  }
+}
+
+.signup-forgot-password {
+  color: black;
+  font-family: $body;
+}
+
+.tos-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    margin-top: 0.7rem;
+  }
+  p {
+    font-family: $body;
+    color: $gs-pink;
+    span {
+      color: black;
+      text-decoration: underline;
+    }
+  }
+}
