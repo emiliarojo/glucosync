@@ -1,0 +1,31 @@
+input {
+  border: 1px solid #0000004a;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  width: 90%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  &:focus {
+    outline: none;
+  }
+}
+
+label {
+  font-size: 1rem;
+  font-family: $body;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: $gs-pink;
+  margin-top: 2rem;
+  &::placeholder {
+    color: #0000004a;
+    font-family: $body;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

@@ -24,4 +24,18 @@
     color: white;
     border: 1px solid white;
   }
+  &.btn-black {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+  margin: 2rem 0;
 }

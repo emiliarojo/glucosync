@@ -1,0 +1,27 @@
+@import '../variables';
+@import '../mixins';
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.login-container {
+  margin-top: 8rem;
+  height: 90%;
+  width: 80%;
+}
+
+.login-title {
+  font-family: $header;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.login-forgot-password {
+  color: black;
+  font-family: $body;
+}
