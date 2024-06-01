@@ -1,0 +1,51 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.dashboard-header {
+  background: url('../../../assets/public/waves.svg') no-repeat center center;
+  background-size: cover;
+  background-position: center;
+  height: 260px;
+  padding: 2rem;
+  border-radius: 0 0 20px 20px;
+  h1 {
+    color: white;
+    font-family: $header;
+    font-weight: 500;
+    margin: 0px;
+  }
+
+}
+
+.dashboard-glucose-level-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.dashboard-glucose-level {
+  background-color: white;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid $gs-yellow;
+  h2 {
+    color: black;
+    font-family: $body;
+    font-weight: 500;
+    font-size: 3rem;
+    margin: 0px;
+  }
+  p {
+    color: black;
+    font-family: $body;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin: 0px;
+  }
+}
