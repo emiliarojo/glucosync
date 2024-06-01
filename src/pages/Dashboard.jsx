@@ -27,6 +27,11 @@ const generateGlucoseData = () => {
 
 const data = generateGlucoseData();
 
+const generateGlucoseAverage = (data) => {
+  const total = data.reduce((acc, curr) => acc + curr.Glucose, 0);
+  return Math.round(total / data.length);
+}
+
 const Dashboard = () => {
   return (
     <div className="dashboard">
@@ -44,9 +49,11 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-metrics-container">
         <h3>Advanced Analytics</h3>
-        <p className="dashboard-scan-info">Scanned at {data[data.length-1].time}</p>
-        <p className="dashboard-average">115 mg/dL avg.</p>
-        <ResponsiveContainer width="100%" height={200}>
+        <div className="dashboard-graph-info">
+          <p className="dashboard-scan-info">Scanned at {data[data.length-1].time}</p>
+          <p className="dashboard-average"> {generateGlucoseAverage(data)} mg/dL avg.</p>
+        </div>
+        <ResponsiveContainer width="112%" height={320}>
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
