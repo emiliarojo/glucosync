@@ -1,0 +1,27 @@
+@import '../mixins';
+@import '../variables';
+
+.btn {
+  width: 160px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 20px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-family: $body;
+  margin: 8px 0;
+
+  &.btn-white {
+    background-color: white;
+    color: $gs-pink;
+    border: 1px solid $gs-pink;
+  }
+  &.btn-pink {
+    background-color: $gs-pink;
+    color: white;
+    border: 1px solid white;
+  }
+}

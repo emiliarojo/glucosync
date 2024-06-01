@@ -1,0 +1,32 @@
+// Import variables and mixins first
+@import './assets/styles/variables';
+@import './assets/styles/mixins';
+
+// Import component styles
+@import './assets/styles/components/button';
+@import './assets/styles/components/card';
+@import './assets/styles/components/graph';
+@import './assets/styles/components/input';
+@import './assets/styles/components/popup';
+@import './assets/styles/components/progress_bar';
+
+// Import page styles
+@import './assets/styles/pages/home';
+@import './assets/styles/pages/login';
+@import './assets/styles/pages/signup';
+@import './assets/styles/pages/dashboard';
+@import './assets/styles/pages/administer_insulin';
+@import './assets/styles/pages/insulin_history';
+@import './assets/styles/pages/log_carbs';
+@import './assets/styles/pages/settings';
+
+
+// Base styles for the whole application
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
