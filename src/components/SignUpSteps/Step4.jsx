@@ -24,7 +24,7 @@ const Step4 = ({ formData, handleChange, handleSubmit }) => {
           <p>I accept the <span>Terms & Conditions</span></p>
         </div>
         <div className="btn-container">
-          <button type="submit" className="btn btn-black">Sign up</button>
+          <Link to="/dashboard" className="btn btn-black">Sign up</Link>
         </div>
       </form>
     </div>
