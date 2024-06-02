@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import '../assets/styles/pages/_dashboard.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faArrowRight, faPlus } from '@fortawesome/free-solid-svg-icons';
+import Menu from '../components/Menu';
+import '../assets/styles/pages/_dashboard.scss';
 
 const generateGlucoseData = () => {
   const data = [];
@@ -33,10 +34,17 @@ const generateGlucoseAverage = (data) => {
 }
 
 const Dashboard = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <div className="dashboard">
+      <Menu isOpen={menuOpen} toggleMenu={toggleMenu} />
       <div className="dashboard-header">
-        <div className="hamburger-menu">
+        <div className="hamburger-menu" onClick={toggleMenu}>
           <FontAwesomeIcon icon={faBars} />
         </div>
         <h1>Hey Janette!</h1>

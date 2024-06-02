@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import SignUp from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import InsulinHistory from './pages/InsulinHistory'
+import Settings from './pages/Settings';
 import './index.scss';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/insulin-history" element={<InsulinHistory />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </div>
     </Router>
