@@ -1,13 +1,6 @@
 @import "../../../assets/styles/variables";
 @import "../../../assets/styles/mixins";
 
-.dashboard {
-  h3 {
-    font-family: $header;
-    font-weight: 500;
-    margin: 0px;
-  }
-}
 
 .dashboard-header {
   background: url('../../../assets/public/waves.svg') no-repeat center center;
@@ -68,6 +61,12 @@
     font-size: 1rem;
     margin: 2px;
   }
+  h3 {
+    font-family: $header;
+    font-weight: 500;
+    font-size: 1.4rem;
+    margin: 0px;
+  }
 }
 
 .dashboard-graph-info {
@@ -106,7 +105,7 @@
   h4 {
     font-family: $body;
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin: 0;
     color: $gs-yellow;
   }
@@ -114,7 +113,7 @@
   p {
     font-family: $body;
     font-weight: 300;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 0;
     color: white;
   }
