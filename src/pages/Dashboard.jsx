@@ -53,7 +53,7 @@ const Dashboard = () => {
           <p className="dashboard-scan-info">Scanned at {data[data.length-1].time}</p>
           <p className="dashboard-average"> {generateGlucoseAverage(data)} mg/dL avg.</p>
         </div>
-        <ResponsiveContainer width="112%" height={320}>
+        <ResponsiveContainer width="110%" height={320}>
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />

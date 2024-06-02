@@ -1,0 +1,77 @@
+@import '../variables';
+@import '../mixins';
+
+.insulin-history {
+  padding: 20px;
+  margin-top: 4rem;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+      font-family: $header;
+      font-size: 1.25rem;
+      font-weight: 400;
+    }
+  }
+
+  .MuiDateCalendar-root {
+    width: 100%;
+    border-radius: 8px;
+    font-family: $body;
+    margin-bottom: 20px;
+
+    .MuiPickersDay-dayWithMargin {
+      margin: 4px;
+    }
+
+    .MuiPickersDay-root.Mui-selected {
+      background-color: $gs-pink;
+      color: white;
+    }
+
+    .MuiPickersDay-root {
+      font-size: 0.875rem;
+    }
+  }
+
+  .no-data {
+    font-family: $body;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  &-card {
+    background: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+
+    h2 {
+      font-family: $body;
+      font-size: 1.2rem;
+      font-weight: 500;
+      // color: $black-color;
+    }
+
+    p {
+      font-family: $body;
+      font-size: 0.9rem;
+      // color: $gray-color;
+      margin: 0;
+    }
+
+    span {
+      font-family: $body;
+      font-size: 0.8rem;
+      color: gray;
+      position: absolute;
+      top: 0.8rem;
+      right: 0.8rem;
+    }
+  }
+}
