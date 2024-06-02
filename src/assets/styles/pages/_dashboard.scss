@@ -73,3 +73,57 @@
   display: flex;
   justify-content: space-between;
 }
+
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  width: 100%;
+  grid-auto-rows: 1fr; /* Ensures that all rows have the same height */
+  margin: 2rem 0;
+
+  &::before {
+    content: '';
+    width: 0;
+    padding-bottom: 100%; /* Creates an invisible square */
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+
+  > *:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+}
+
+.dashboard-metric-card {
+  background-color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+
+  h4 {
+    font-family: $body;
+    font-weight: 500;
+    font-size: 2rem;
+    margin: 0;
+    color: $gs-yellow;
+  }
+
+  p {
+    font-family: $body;
+    font-weight: 300;
+    font-size: 1.4rem;
+    margin: 0;
+    color: white;
+  }
+
+  a {
+    font-size: 1.6rem;
+    margin: 0;
+    color: white;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+}

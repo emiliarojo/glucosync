@@ -66,15 +66,15 @@ const Dashboard = () => {
           <div className="dashboard-metric-card">
             <p>Last dose</p>
             <h4>4 units</h4>
-            <p>5:45 PM</p>
-            <Link to="/dose-details">
+            <h4>5:45 PM</h4>
+            <Link to="/insulin-history">
               <FontAwesomeIcon icon={faArrowRight} />
             </Link>
           </div>
           <div className="dashboard-metric-card">
             <p>Carb Intake</p>
             <h4>95 g</h4>
-            <Link to="/carb-intake">
+            <Link to="/log-carbs">
               <FontAwesomeIcon icon={faPlus} />
             </Link>
           </div>
