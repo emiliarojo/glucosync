@@ -28,17 +28,31 @@ const generateGlucoseData = () => {
 
 const data = generateGlucoseData();
 
-const generateGlucoseAverage = (data) => {
+const convertToMmolL = (mgdl) => (mgdl / 18).toFixed(1);
+const convertToMgdl = (mmolL) => (mmolL * 18).toFixed(0);
+
+const generateGlucoseAverage = (data, unit) => {
   const total = data.reduce((acc, curr) => acc + curr.Glucose, 0);
-  return Math.round(total / data.length);
+  const average = total / data.length;
+  return unit === 'mg/dL' ? Math.round(average) : convertToMmolL(average);
 }
 
 const Dashboard = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [unit, setUnit] = useState('mg/dL');
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const toggleUnit = () => {
+    setUnit(unit === 'mg/dL' ? 'mmol/L' : 'mg/dL');
+  };
+
+  const convertedData = data.map(entry => ({
+    ...entry,
+    Glucose: unit === 'mg/dL' ? entry.Glucose : convertToMmolL(entry.Glucose),
+  }));
 
   return (
     <div className="dashboard">
@@ -48,10 +62,10 @@ const Dashboard = () => {
           <FontAwesomeIcon icon={faBars} />
         </div>
         <h1>Hey Janette!</h1>
-        <div className="dashboard-glucose-level-container">
+        <div className="dashboard-glucose-level-container" onClick={toggleUnit}>
           <div className="dashboard-glucose-level">
-            <h2>{data[data.length-1].Glucose}</h2>
-            <p>mg/dL</p>
+            <h2>{unit === 'mg/dL' ? data[data.length-1].Glucose : convertToMmolL(data[data.length-1].Glucose)}</h2>
+            <p>{unit}</p>
           </div>
         </div>
       </div>
@@ -59,13 +73,13 @@ const Dashboard = () => {
         <h3>Advanced Analytics</h3>
         <div className="dashboard-graph-info">
           <p className="dashboard-scan-info">Scanned at {data[data.length-1].time}</p>
-          <p className="dashboard-average"> {generateGlucoseAverage(data)} mg/dL avg.</p>
+          <p className="dashboard-average">{generateGlucoseAverage(data, unit)} {unit} avg.</p>
         </div>
         <ResponsiveContainer width="110%" height={320}>
-          <LineChart data={data}>
+          <LineChart data={convertedData}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="time" />
-            <YAxis domain={[50, 175]} />
+            <YAxis domain={[unit === 'mg/dL' ? 50 : 2.8, unit === 'mg/dL' ? 175 : 9.7]} />
             <Tooltip />
             <Line type="monotone" dataKey="Glucose" stroke="#FF4D6D" />
           </LineChart>
