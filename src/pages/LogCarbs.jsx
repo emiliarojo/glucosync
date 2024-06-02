@@ -4,19 +4,20 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link, useNavigate } from 'react-router-dom';
 
 const LogCarbs = () => {
-  const [carbs, setCarbs] = useState(0);
+  const [carbs, setCarbs] = useState('');
   const navigate = useNavigate();
 
   const handleCarbsChange = (e) => {
-    setCarbs(e.target.value);
+    const value = e.target.value;
+    setCarbs(value ? parseInt(value, 10) : '');
   };
 
   const handleAdministerInsulin = async () => {
-    const currentGlucoseLevel = 180; // Example value, replace with actual value
-    const targetGlucoseLevel = 100; // Example value, replace with actual value
-    const isf = 50; // Example value, replace with actual value
-    const icr = 10; // Example value, replace with actual value
-    const iob = 1; // Example value, replace with actual value
+    const currentGlucoseLevel = 180;
+    const targetGlucoseLevel = 100;
+    const isf = 50;
+    const icr = 10;
+    const iob = 1;
 
     const response = await fetch('https://insulin-dose-calculator.vercel.app/calculate_insulin', {
       method: 'POST',
@@ -33,10 +34,16 @@ const LogCarbs = () => {
       }),
     });
 
-    const data = await response.json();
-    const recommendedInsulin = data.recommended_insulin;
+    if (!response.ok) {
+      const errorDetails = await response.json();
+      console.error('Error:', errorDetails);
+      return;
+    }
 
-    navigate('/administer-insulin', { state: { recommendedInsulin, carbs } });
+    const data = await response.json();
+    const { carb_coverage_dose, correction_dose, total_insulin_dose } = data;
+
+    navigate('/administer-insulin', { state: { carbCoverageDose: carb_coverage_dose, correctionDose: correction_dose, totalInsulinDose: total_insulin_dose, carbs } });
   };
 
   return (
