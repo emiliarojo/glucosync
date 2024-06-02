@@ -1,0 +1,46 @@
+@import '../variables';
+@import '../mixins';
+
+.administer-insulin {
+  padding: 20px;
+
+  .administer-insulin-header {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+
+    h1 {
+      font-family: $header;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: black;
+    }
+  }
+
+  .injection-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .injection-type-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: none;
+      font-family: $header;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &.active {
+        color: $gs-pink;
+        border-bottom: 2px solid $gs-pink;
+      }
+    }
+  }
+
+  .numerical-inputs {
+    display: flex;
+    flex-direction: column;
+    }
+
+}

@@ -6,6 +6,8 @@ import SignUp from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import InsulinHistory from './pages/InsulinHistory'
 import Settings from './pages/Settings';
+import LogCarbs from './pages/LogCarbs';
+import AdministerInsulin from './pages/AdministerInsulin';
 import './index.scss';
 
 const App = () => {
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/insulin-history" element={<InsulinHistory />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/log-carbs" element={<LogCarbs />} />
+          <Route path="/administer-insulin" element={<AdministerInsulin />} />
         </Routes>
       </div>
     </Router>
