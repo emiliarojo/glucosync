@@ -8,11 +8,13 @@ import InsulinHistory from './pages/InsulinHistory'
 import Settings from './pages/Settings';
 import LogCarbs from './pages/LogCarbs';
 import AdministerInsulin from './pages/AdministerInsulin';
+import ScrollToTop from './components/ScrollToTop';
 import './index.scss';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />

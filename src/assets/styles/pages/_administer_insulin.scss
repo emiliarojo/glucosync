@@ -69,12 +69,13 @@
 
     .close-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 0.5rem;
+      right: 0.5rem;
       background: none;
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
+      color: black;
     }
 
     h2 {
